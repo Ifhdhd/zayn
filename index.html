@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/style.css">
+<script>navigator.serviceWorker?.register('sw.js');</script>
+</head><body>
+<div class="sidebar">
+ <h2>FB Admin</h2>
+ <button onclick="loadData()">Refresh</button>
+ <button onclick="openMultiEdit()">Edit Massal</button>
+</div>
+<div class="content">
+ <h1>Dashboard Admin</h1>
+ <div class="panel">
+  <h2>Konfigurasi Database</h2>
+  <input id="dbUrl">
+  <input id="dbSecret">
+  <button onclick="saveConfig()">Simpan</button>
+ </div>
+ <div class="panel">
+  <h2>Daftar User</h2>
+  <div id="userList">Belum ada data...</div>
+ </div>
+</div>
+
+<div id="multiModal" class="modal">
+ <div class="modal-box">
+   <h2>Edit Massal</h2>
+   <input id="multi_username" placeholder="Username">
+   <input id="multi_password" placeholder="Password">
+   <input id="multi_expiry" placeholder="Expiry yyyy-mm-dd">
+   <button onclick="applyMultiEdit()">Simpan</button>
+   <button onclick="closeMulti()">Batal</button>
+ </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body></html>
